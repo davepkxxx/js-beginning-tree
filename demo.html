@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="beginning-tree.css">
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" src="beginning-tree.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				var tree = new BeginningTree({
+					tag: $("#menu"),
+					data: [{
+						id: 0,
+						label: "com",
+						subs: [{
+							id: 1,
+							label: "dept1",
+							subs: [{
+								id: 2,
+								label: "person1"
+							}, {
+								id: 3,
+								label: "person2"
+							}]
+						}, {
+							id: 4,
+							label: "dept2",
+							subs: [{
+								id: 5,
+								label: "person3"
+							}, {
+								id: 6,
+								label: "person4"
+							}]
+						}]
+					}]
+				});
+				tree.write();
+			});
+		</script>
+	</head>
+	<body>
+		<div id="menu"></div>
+	</body>
+</html>

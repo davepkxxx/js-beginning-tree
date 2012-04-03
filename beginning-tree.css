@@ -1,0 +1,78 @@
+@CHARSET "UTF-8";
+.beginning-tree {
+	text-align: left;
+}
+.beginning-tree-node {
+	list-style-type: none;
+}
+.beginning-tree-list {
+	-webkit-padding-start: 0px;
+}
+.beginning-tree-label,
+.beginning-tree-icon-close-middle,
+.beginning-tree-icon-close-bottom,
+.beginning-tree-icon-open-middle,
+.beginning-tree-icon-open-bottom {
+	cursor: pointer;
+}
+.beginning-tree-label {
+	font-size: 9pt;
+}
+.beginning-tree-icon-blank,
+.beginning-tree-icon-line,
+.beginning-tree-icon-middle,
+.beginning-tree-icon-bottom,
+.beginning-tree-icon-close,
+.beginning-tree-icon-close-middle,
+.beginning-tree-icon-close-bottom,
+.beginning-tree-icon-open,
+.beginning-tree-icon-open-middle,
+.beginning-tree-icon-open-bottom,
+.beginning-tree-icon-folder,
+.beginning-tree-icon-folder-open,
+.beginning-tree-icon-leaf {
+	width: 16px;
+	height: 18px;
+	display: inline;
+	float: left;
+	background-repeat: no-repeat;
+}
+.beginning-tree-icon-blank {
+	background: url("icon/blank.gif");
+}
+.beginning-tree-icon-line {
+	background: url("icon/line.gif");
+}
+.beginning-tree-icon-middle {
+	background: url("icon/middle.gif");
+}
+.beginning-tree-icon-bottom {
+	background: url("icon/bottom.gif");
+}
+.beginning-tree-icon-close {
+	background: url("icon/close.gif");
+}
+.beginning-tree-icon-close-middle {
+	background: url("icon/close-middle.gif");
+}
+.beginning-tree-icon-close-bottom {
+	background: url("icon/close-bottom.gif");
+}
+.beginning-tree-icon-open {
+	background: url("icon/open.gif");
+}
+.beginning-tree-icon-open-middle {
+	background: url("icon/open-middle.gif");
+}
+.beginning-tree-icon-open-bottom {
+	background: url("icon/open-bottom.gif");
+}
+.beginning-tree-icon-folder {
+	background: url("icon/folder.gif");
+}
+.beginning-tree-icon-folder-open {
+	background: url("icon/folder-open.gif");
+}
+.beginning-tree-icon-leaf {
+	background: url("icon/leaf.gif");
+}
