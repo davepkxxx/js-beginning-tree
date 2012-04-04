@@ -29,6 +29,13 @@ BeginningTree.prototype.url = null;
  */
 BeginningTree.prototype.tag = null;
 
+BeginningTree.prototype.icons = {
+	basePath: "icon/",
+	leafIcon: "leaf.gif",
+	folderCloseIcon: "folder.gif",
+	folderOpenIcon: "folder-open.gif"
+};
+
 /**
  * 判断对象是否为null
  * @param obj 对象
@@ -132,17 +139,18 @@ BeginningTree.prototype.writeNode = function(obj, parent, floor, pads, pos) {
 	}
 	switchTag.appendTo(nodeTag);
 	// 增加节点图标
-	var iconTag = $("<div category=\"icon\">&nbsp;</div>");
+	var iconTag = $("<img category=\"icon\" class=\"beginning-tree-icon\" />");
 	iconTag.attr("nodeid", obj.id);
 	if (this.isBlank(obj.icon)) {
-		if (this.isEmpty(obj.subs)) {
-			iconTag.addClass("beginning-tree-icon-leaf");
-		} else {
-			iconTag.addClass("beginning-tree-icon-folder-open");
-		}
+		iconTag.attr("leafIcon", this.isBlank(obj.leafIcon) ? this.icons.leafIcon : obj.leafIcon);
+		iconTag.attr("folderCloseIcon", this.isBlank(obj.folderCloseIcon) ? this.icons.folderCloseIcon : obj.folderCloseIcon);
+		iconTag.attr("folderOpenIcon", this.isBlank(obj.leafIcon) ? this.icons.folderOpenIcon : obj.folderOpenIcon);
 	} else {
-		iconTag.addClass("beginning-tree-icon-" + obj.icon);
+		iconTag.attr("leafIcon", obj.icon);
+		iconTag.attr("folderCloseIcon", obj.icon);
+		iconTag.attr("folderOpenIcon", obj.icon);
 	}
+	iconTag.attr("src", this.icons.basePath + (this.isEmpty(obj.subs) ? iconTag.attr("leafIcon") : iconTag.attr("folderOpenIcon")));
 	iconTag.appendTo(nodeTag);
 	// 增加文字
 	var labelTag = $("<span class=\"beginning-tree-label\">" + obj.label + "</span>");
@@ -201,9 +209,8 @@ BeginningTree.prototype.open = function(id) {
 	switchTag.removeClass("beginning-tree-icon-open-" + pos);
 	switchTag.addClass("beginning-tree-icon-close-" + pos);
 	// 改变图标样式
-	var iconTag = this.tag.find("div[category=icon][nodeid=" + id + "]");
-	iconTag.removeClass("beginning-tree-icon-folder");
-	iconTag.addClass("beginning-tree-icon-folder-open");
+	var iconTag = this.tag.find("img[category=icon][nodeid=" + id + "]");
+	iconTag.attr("src", this.icons.basePath + iconTag.attr("folderOpenIcon"));
 };
 
 /**
@@ -228,7 +235,6 @@ BeginningTree.prototype.close = function(id) {
 	switchTag.removeClass("beginning-tree-icon-close-" + pos);
 	switchTag.addClass("beginning-tree-icon-open-" + pos);
 	// 改变图标样式
-	var iconTag = this.tag.find("div[category=icon][nodeid=" + id + "]");
-	iconTag.removeClass("beginning-tree-icon-folder-open");
-	iconTag.addClass("beginning-tree-icon-folder");
+	var iconTag = this.tag.find("img[category=icon][nodeid=" + id + "]");
+	iconTag.attr("src", this.icons.basePath + iconTag.attr("folderCloseIcon"));
 };

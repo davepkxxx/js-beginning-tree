@@ -28,9 +28,7 @@
 .beginning-tree-icon-open,
 .beginning-tree-icon-open-middle,
 .beginning-tree-icon-open-bottom,
-.beginning-tree-icon-folder,
-.beginning-tree-icon-folder-open,
-.beginning-tree-icon-leaf {
+.beginning-tree-icon {
 	width: 16px;
 	height: 18px;
 	display: inline;
@@ -66,13 +64,4 @@
 }
 .beginning-tree-icon-open-bottom {
 	background: url("icon/open-bottom.gif");
-}
-.beginning-tree-icon-folder {
-	background: url("icon/folder.gif");
-}
-.beginning-tree-icon-folder-open {
-	background: url("icon/folder-open.gif");
-}
-.beginning-tree-icon-leaf {
-	background: url("icon/leaf.gif");
 }

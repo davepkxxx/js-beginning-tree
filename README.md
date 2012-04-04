@@ -9,7 +9,7 @@
 
 ## Features
 
-	1. Custom node icons.
+	1. More data type.
 	2. Add & edit & remove nodes.
 
 ## License 
